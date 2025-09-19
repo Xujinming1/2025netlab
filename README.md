@@ -1,10 +1,10 @@
 # 2025netlab
 
 ## 文件管理
-`docs` 里储存页面 `markdown` 文件 
-`mkdocs.yml` 里储存页面设置
-代码管理在 `main` 分支下
-页面展示在 `gh-pages` 分支下
+- `docs` 里储存页面 `markdown` 文件 
+- `mkdocs.yml` 里储存页面设置
+- 代码管理在 `main` 分支下
+- 页面展示在 `gh-pages` 分支下
 
 ## 环境配置
 ```bash
