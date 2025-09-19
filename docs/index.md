@@ -1,6 +1,5 @@
-# Welcome to MkDocs
+# 2025 秋冬学期计算机网络实验指导文档
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Commands
 
