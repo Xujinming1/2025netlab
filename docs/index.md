@@ -1,21 +1,9 @@
 # 2025 秋冬学期计算机网络实验指导文档
 
+本文档是浙江大学 2025 学年秋冬学期《计算机网络》课程实验指导文档
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-
+- 指导教师：韩劲松
+- 助教：冯思博 & 徐锦铭
 
 ## 1 实验介绍
 
@@ -28,3 +16,8 @@
 - The Summit(TCP in Full)
 - 基于Socket接口实现自定义协议通信
 
+## 2 实验提交
+
+- 实验报告的模板获取和最终提交，都在学在浙大上进行
+- 实验报告提交的 DDL 默认为发布的两周后，如有特殊会另行通知
+- 实验报告每迟交一天，该次分数扣 10%
