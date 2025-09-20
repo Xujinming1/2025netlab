@@ -7,3 +7,16 @@ nav:
   - 主页: index.md
   - Lab1: lab1.md
   - Lab2: lab2.md
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - glightbox
+
+extra_css:
+  - css/extra.css
