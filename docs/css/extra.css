@@ -14,6 +14,10 @@ h2 {
     font-weight: 500 !important;
 }
 
+.md-typeset ul ul {
+    list-style-type: circle;
+}
+
 table img {
     height: 50px !important;          /* 高度自适应 */
     width: auto;          /* 图片宽度 */
