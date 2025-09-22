@@ -93,9 +93,9 @@ WireShark 中过滤器主要有两种：**显示过滤器**和**捕获过滤器*
 | arp | 显示本机记录的局域网内其它机器IP地址与其物理地址的对照表 | `arp -a` | ![](./assets/lab1/arp.png) |
 | tracert | 显示从本机到达一个特定地址的路由过程 | `tracert xxx` | ![](./assets/lab1/tracert.png) |
 | nslookup | 显示某一个域名的 IP 地址 | `nslookup xxx` | ![](./assets/lab1/nslookup.png) |
-| nbtstat | 显示已经与本机建立TCP连接的端口、IP地址、连接状态等信息 | `nbtstat -n` | ![](./assets/lab1/nbtstat.png) |
+| nbtstat | 显示本机 NetBIOS 名称表 | `nbtstat -n` | ![](./assets/lab1/nbtstat.png) |
 | route | 显示本机的路由表信息 &<br>并手工添加一个路由 | `route print` &<br> `route add xxx mask mmm yyy` | ![](./assets/lab1/route.png) |
-| netstat | 显示本机的网络映射连接 | `netstat -n` | ![](./assets/lab1/netstat.png) |
+| netstat | 显示已经与本机建立TCP连接的端口、IP地址、连接状态等信息 | `netstat -n` | ![](./assets/lab1/netstat.png) |
 | NET SHARE | 显示局域网范围内某台机器的共享资源 | `NET SHARE` | ![](./assets/lab1/NET.png) |
 | telnet | 连接WEB服务器的端口获得该网站的主页内容 | `telnet xxx`<br>`GET / HTTP/1.1`<br>`HOST:xxx` | ![](./assets/lab1/telnet.png) |
 
