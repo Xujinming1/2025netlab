@@ -642,7 +642,7 @@
 <li>详细任务内容可在实验报告模板中查看，实验结果截图放在最终实验报告中提交。</li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">提示</p>
+<p class="admonition-title">提示 &amp; 要求</p>
 <ul>
 <li>示例中出现的 <code>xxx</code> 表示某个域名/IP地址，可任意选择，尽可能选择同图片示例不同的内容。<code>mmm</code> 表示子网掩码，<code>yyy</code> 表示网关。</li>
 <li>在使用 <code>route add</code> 指令添加完路由后，请用 <code>route print</code> 指令重新打印一遍本机并指出你添加的路由位置。</li>
@@ -662,6 +662,7 @@
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <ul>
+<li><code>route add</code> 操作可能会报错：“请求时操作需要提升”，需要以管理员身份打开 <code>cmd</code> 或 <code>powershell</code>。</li>
 <li>部分电脑输入 <code>telnet</code> 指令成功连接后会进入黑色窗口，此时输入键盘可能并不会显示在终端上，但后台仍然在读入。可以盲打指令进行下一步操作，输入完成后需要键入两次回车才算完毕。</li>
 <li>在执行 <code>telnet</code> 指令时可能遇见类似报错：“telnet不是内部指令”，可参考<a href="https://blog.csdn.net/qq_36292543/article/details/119645130">win10 telnet不是内部或外部命令（已解决）</a></li>
 <li>若出现类似报错：“23端口连接失败”，可以在切换其他端口（如80等）重试。在命令 <code>telnet xxx</code> 后加上端口号即可，即 <code>telnet xxx yy</code>，yy指端口号。<br>
