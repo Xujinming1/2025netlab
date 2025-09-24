@@ -127,6 +127,7 @@ WireShark 中过滤器主要有两种：**显示过滤器**和**捕获过滤器*
 !!! warning "注意"
     - `route add` 操作可能会报错：“请求时操作需要提升”，需要以管理员身份打开 `cmd` 或 `powershell`。
     - 部分电脑输入 `telnet` 指令成功连接后会进入黑色窗口，此时输入键盘可能并不会显示在终端上，但后台仍然在读入。可以盲打指令进行下一步操作，输入完成后需要键入两次回车才算完毕。
+    - 使用 `telnet` 连接后，注意第二句命令 `GET / HTTP/1.1` 中 `/` 附近的空格，第一个有空格第二个没有。
     - 在执行 `telnet` 指令时可能遇见类似报错：“telnet不是内部指令”，可参考[win10 telnet不是内部或外部命令（已解决）](https://blog.csdn.net/qq_36292543/article/details/119645130)
     - 若出现类似报错：“23端口连接失败”，可以在切换其他端口（如80等）重试。在命令 `telnet xxx` 后加上端口号即可，即 `telnet xxx yy`，yy指端口号。  
       若仍不行，可考虑下载 telnetSetup.exe 重启：[win10 Telnet服务器 解决telnet正在连接127.0.0.1...无法打开到主机的连接 在端口 23: 连接失败](https://blog.csdn.net/qq_43779149/article/details/119141334)
