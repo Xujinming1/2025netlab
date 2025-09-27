@@ -240,7 +240,7 @@ size_t bytes_read() const; //总共pop出的字节数
 ```
 
 
-当你完成开发后，你可以输入 `make check_lab0 [Enter]` 进行自动测试。你将看到如下的结果：
+当你开发完成并重新编译项目后，你可以输入 `make check_lab0 [Enter]` 进行自动测试。你将看到如下的结果：
 
 ```
 $ make check_lab0
