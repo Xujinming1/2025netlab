@@ -219,7 +219,7 @@ ByteStream(const size_t capacity); // 初始化所有需要的私有成员（自
 ```c++
 size_t write(const std::string &data) //将data尽可能多地写入stream，返回写入stream的字节数。
 size_t remaining_capacity() const //返回stream中剩余空间的字节数。
-void end_input() //若stream达到容量上限，则私有变量赋值true
+void end_input() //给私有变量赋值为true，代表输入已经完成
 void set_error() { _error = true; } //若stream遇到错误，则私有变量_error赋值true
 ```
 3. Reader
