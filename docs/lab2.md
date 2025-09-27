@@ -1,5 +1,8 @@
 # Lab2 Webget 与字节流（ByteStream）
 
+!!! warning "注意"
+	实验报告提交 ddl 为 2025 年 10 月 26 日 23:59，请同学们留意。
+
 !!! note "说明"
 	Lab2-5与CS144的实验内容对齐，我们将实现一个完整的TCP/IP协议栈。
 
