@@ -817,7 +817,7 @@ Total Test time (real) =   1.19 sec
 <li>Writer
 <div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="n">write</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="c1">//将data尽可能多地写入stream，返回写入stream的字节数。</span>
 <span class="kt">size_t</span><span class="w"> </span><span class="n">remaining_capacity</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="c1">//返回stream中剩余空间的字节数。</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">end_input</span><span class="p">()</span><span class="w"> </span><span class="c1">//若stream达到容量上限，则私有变量赋值true</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">end_input</span><span class="p">()</span><span class="w"> </span><span class="c1">//给私有变量赋值为true，代表输入已经完成</span>
 <span class="kt">void</span><span class="w"> </span><span class="n">set_error</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">//若stream遇到错误，则私有变量_error赋值true</span>
 </code></pre></div></li>
 <li>Reader
