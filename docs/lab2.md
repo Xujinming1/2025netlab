@@ -44,7 +44,7 @@ VirtualBox：<https://www.oracle.com/cn/virtualization/virtualbox/>
 
 ### 1.3 连接你的虚拟机
 
-我们推荐你使用 **ssh** 连接你的虚拟机，你可以将你的虚拟机使用 ssh 集成在 vscode 来进行编辑。虚拟机镜像已设置后，VirtualBox 会将主机上 localhost:2222 的 TCP 连接转发到虚拟机的 22 号端口 (ssh)。虚拟机运行时，你可以按如下方式连接：
+我们推荐你使用 **ssh** 连接你的虚拟机，你可以将你的虚拟机使用 ssh 集成在 vscode 来进行编辑。虚拟机镜像已设置后，VirtualBox 会将主机上 localhost:2222 的 TCP 连接转发到虚拟机的 22 号端口 (ssh)。虚拟机运行时，你可以按如下方式连接：（如果你在配置ssh时出现问题，可以参考一下文档末尾的注意事项，可能会帮到你）
 
 ```bash
 ssh -p 2222 cs144@localhost
@@ -277,3 +277,10 @@ Total Test time (real) =   1.38 sec
  	- `/path/to/zju-comnet-labs/test/` 下的 `byte_stream_test_harness.hh` 和 `byte_stream_test_harness.cc` 是所有测试方法的声明和实现。
  	
  	- `/path/to/zju-comnet-labs/byte_stream_xxx.cc` 为测试样例
+
+
+
+!!! warning "注意"
+	- 如果无法使用ssh连接虚拟机，显示“Connection Refused"，可以在VirtualBox的虚拟机设置里手动加一下端口转发，如下图所示。
+	<img src="../assets/lab2/port.png" alt="buffer" style="zoom:70%;"/>
+	- 如果你使用的MacBook，在UTM虚拟机中找不到端口转发的选项，可以在设置中将网络模式调整为模拟VLAN。
