@@ -561,7 +561,7 @@
 <p>在上一次实验中，我们熟悉了 socket 的一些接口，比如 <code>connect()</code>，<code>write()</code>，<code>read()</code> 等，并实现了一个简化版的 socket 读写缓冲区（ByteStream）。为了与课程进度保持对齐，我们暂时将 TCPReceiver/Sender 和 TCPConnection 的实现放到后面的两次实验。在本次实验中，我们将聚焦于<strong>网络层与链路层的交互</strong>。我们将实现：</p>
 <ul>
 <li>网络接口（Network Interface），为每个目标 IP 地址查找对应的以太网地址，即实现地址解析协议（ARP）</li>
-<li>简易路由器（Router），对于给定的数据报，确认发送接口以及下一跳的IP地址</li>
+<li>简易路由器（Router），对于给定的数据报，确认下一跳的IP地址以及发送接口</li>
 </ul>
 <h2 id="2">2 网络接口</h2>
 <p>在这一章节中，我们将实现网络接口类，对数据报进行发送和接收。首先，我们先要了解什么是 MAC 地址，以及我们为什么需要 MAC 地址。</p>
@@ -733,7 +733,7 @@ Total Test time (real) =   0.01 sec
 <li>路由器检查数据报的<strong>目标 IP 地址</strong>。</li>
 <li>与路由表中的所有条目进行<strong>匹配</strong>。</li>
 <li>按照<strong>最长前缀匹配（Longest Prefix Match）</strong>原则选择最具体的路由。</li>
-<li>根据匹配到的条目，将数据报转发到对应的接口或下一跳。</li>
+<li>根据匹配到的条目，将数据报从对应的接口转发到合适的下一跳。</li>
 </ol>
 <blockquote>
 <p>例如：目标地址是 <code>192.168.1.25</code>
