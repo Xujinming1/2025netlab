@@ -9,6 +9,7 @@
 ## 环境配置
 ```bash
 pip install mkdocs-material
+pip install mkdocs-glightbox
 ```
 
 ## 页面编写
