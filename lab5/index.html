@@ -1,0 +1,960 @@
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../lab4/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Lab5 - 2025 计算机网络实验文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab5-tcp" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="2025 计算机网络实验文档" class="md-header__button md-logo" aria-label="2025 计算机网络实验文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            2025 计算机网络实验文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="2025 计算机网络实验文档" class="md-nav__button md-logo" aria-label="2025 计算机网络实验文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    2025 计算机网络实验文档
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab5
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 引言
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 三次握手与四次挥手
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 三次握手与四次挥手">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 三次握手
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 四次挥手
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-rst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 RST 标志
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 你的任务
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 你的任务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 代码实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 测试环节
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 测试环节">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-lab4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 lab4 代码测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-webget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 webget 模块替换测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 最终模拟终端测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 引言
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 三次握手与四次挥手
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 三次握手与四次挥手">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 三次握手
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 四次挥手
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-rst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 RST 标志
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 你的任务
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 你的任务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 代码实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 测试环节
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 测试环节">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-lab4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 lab4 代码测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-webget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 webget 模块替换测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 最终模拟终端测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab5-tcp">Lab5 综合实验：完整的TCP实现</h1>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>实验报告提交 ddl 为 2025 年 12 月 21 日 23:59，请同学们留意。</p>
+</div>
+<h2 id="1">1 引言</h2>
+<p>在上一次实验中，我们了解了传输层中 TCP 协议的一些内容，并且实现了 Receiver 和 Sender 模块（下图黄蓝模块），用于接收和发送 TCP 分组相关数据和信息。那么在本次实验中，我们将整合这两个子模块，实现整个 TCP Connection 模块（下图红色模块），实现客户端和服务器端互相的信息交流。具体而言我们将：</p>
+<ul>
+<li>结合 TCP Receiver 和 Sender，同时收发数据。</li>
+<li>实现 TCP Connection 的状态管理。（建立/断开连接等）</li>
+<li>整合网络接口、IP路由以及TCP并实现端到端的通信</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/lab4/total.png" data-desc-position="bottom"><img src="../assets/lab4/total.png" alt="format" style="display:block; margin:0 auto; width:80%; height:auto; "></a></p>
+<h2 id="2">2 三次握手与四次挥手</h2>
+<p>TCP 作为一个面向连接的网络传输协议，其非常重要的一个特点在于建立和断开连接。而在一次连接的不同时期，终端会进入不同的状态。大致可以分成如下三个阶段：<strong>连接建立阶段、数据传输阶段、连接释放阶段</strong>。连接建立和释放阶段需要反复请求和确认，因此这两个过程被称作<strong>三次握手</strong>和<strong>四次挥手</strong>。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/lab5/connection.png" data-desc-position="bottom"><img src="../assets/lab5/connection.png" alt="format" style="display:block; margin:0 auto; width:60%; height:auto; "></a></p>
+<h3 id="21">2.1 三次握手</h3>
+<p>在连接建立阶段，客户端、服务器端需要总计三次的请求和确认：</p>
+<ul>
+<li>客户端发送 SYN 请求建立连接，由 LISTEN 进入 SYNSENT 状态。</li>
+<li>服务器端发送 SYN + ACK 表示收到，由 LISTEN 进入 SYN RCVD 状态。</li>
+<li>客户端发送 ACK 表示收到，进入 ESTAB 状态。</li>
+<li>（服务器端收到后进入 ESTAB 状态）</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/lab5/connestab.png" data-desc-position="bottom"><img src="../assets/lab5/connestab.png" alt="format" style="display:block; margin:0 auto; width:80%; height:auto; "></a></p>
+<p>在这个过程中，双方的初始序列号也被互相确认，双方能够正确决定确认号。</p>
+<div class="admonition note">
+<p class="admonition-title">说明</p>
+<ul>
+<li>为什么需要第三次握手：<ul>
+<li>第三次握手可以让服务器端知晓客户端成功收到了他的初始序列号信息，因为客户端成功返回了 ACK 确认号。同时服务器端也确认了客户端确实有接收数据的能力。 </li>
+<li>假如没有第三次握手，与此同时。因为某种原因网络中漂流了一个旧的 SYN 包，那么服务器端收到这个请求就会进入 ESTAB 状态并开始等待接收数据和发送数据。但实际上这并不是客户端的连接请求，形成了一个野连接。</li>
+</ul>
+</li>
+<li>为什么不需要第四次握手：<ul>
+<li>即便第三次 ACK 丢了，但客户端在发送第三次 ACK 之后就开始了传输数据，这些数据 ACK 是始终置 1 的（确认号表示希望接收到下一个包序号，所以在传输过程中一直都有），可以作为第三次握手的替代。</li>
+<li>第三次 ACK 包丢了，服务器端也会重新发送 SYN-ACK 包，客户端收到后也会回复 ACK 包使服务器端进入 ESTAB 状态，本身也早已进入 ESTAB 状态并不影响。</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="22">2.2 四次挥手</h3>
+<p>在连接释放阶段，客户端、服务器端需要总计四次的请求和确认：</p>
+<ul>
+<li>客户端发送 FIN 请求结束连接。。</li>
+<li>服务器端发送 ACK 确认。</li>
+<li>（此时客户端仍可接收，服务器端仍可发送）</li>
+<li>服务器端发送 FIN 请求。</li>
+<li>客户端发送 ACK 确认。</li>
+<li>（客户端在发送完毕之后需要额外等待 2 * MSL 时间才能关闭）</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/lab5/connclose.png" data-desc-position="bottom"><img src="../assets/lab5/connclose.png" alt="format" style="display:block; margin:0 auto; width:80%; height:auto; "></a></p>
+<div class="admonition note">
+<p class="admonition-title">说明</p>
+<ul>
+<li>MSL 全程 Max Segment Lifetime，表示一个 TCP 报文段在被丢弃之前在网络中可能存在的最大时间，如果一个 TCP 报文段在网络中漂流的时间超过了 MSL，那么它将被路由器或者节点丢弃。</li>
+<li>为什么客户端发送 ACK 之后需要额外等待 2 * MSL 时间？<ul>
+<li><strong>为了接收可能的重传 FIN 包</strong>。如果不等待，客户端在发送 ACK 之后直接结束。假如客户端发送的 ACK 在网络中丢失。服务器端超时未接收到 ACK 会重新发送一遍 FIN 请求，但客户端已经结束，接收到 FIN 请求会认为发生异常情况，影响实际结果。</li>
+<li><strong>等待旧的数据包全部被丢弃</strong>。另一方面，若不等待，客户端发送 ACK 之后直接结束。服务器端依旧由于未收到 ACK 而重发 FIN，但本次 FIN 漂流较久，久到客户端已经重新建立了新连接，此时收到一个 FIN 包，产生其他的影响。</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="23-rst">2.3 RST 标志</h3>
+<p>在上面的连接建立过程里我们看到了许多极端情况，但在真实情况确实可能发生。如果确实出现意料之外的情况发生，此时客户端/服务器端就会发送 RST 包，重置整个连接。</p>
+<p>例如，A 向 B 发送 FIN 结束请求，B 回复 ACK 时网断了，A 因种种原因关闭进程，网恢复之后又收到 B 发送的数据，A 认为是野连接于是发送 RST 强制关闭连接。</p>
+<p>RST 标志同样在 TCP 首部中进行标识，与 SYN 标志相邻。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/lab4/tcpheader.png" data-desc-position="bottom"><img src="../assets/lab4/tcpheader.png" alt="format" style="display:block; margin:0 auto; width:80%; height:auto; "></a></p>
+<p>在本次实验中我们需要用到 RST 标志进行异常状态管理。</p>
+<h2 id="3">3 你的任务</h2>
+<h3 id="31">3.1 代码实现</h3>
+<p>本次实验中你需要结合之前实现的 TCP Receiver 和 Sender，实现完整的一个 TCP 段模块，可以同时收发信息和状态切换。大致存在的状态切换可以看成一个有限状态机，如图所示。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/lab5/dfs.png" data-desc-position="bottom"><img src="../assets/lab5/dfs.png" alt="format" style="display:block; margin:0 auto; width:80%; height:auto; "></a></p>
+<p>具体而言，你需要实现 <code>libsponge/tcp_connection.cc</code> 和 <code>libsponge/tcp_connection.hh</code> 里的函数。主要有以下四个部分：</p>
+<ol>
+<li>
+<p>接收部分
+</p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">TCPConnection::segment_received</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TCPSegment</span><span class="w"> </span><span class="o">&amp;</span><span class="n">seg</span><span class="p">);</span>
+<span class="c1">// 1. 如果设置了RST标志，将入站流和出站流都设置为错误状态，并永久终止连接。</span>
+<span class="c1">// 2. 把这个段交给TCPReceiver，这样它就可以在传入的段上检查它关心的字段：seqno、SYN、负载以及FIN。</span>
+<span class="c1">// 3. 如果设置了ACK标志，则告诉TCPSender它关心的传入段的字段：ackno和window_size。</span>
+<span class="c1">// 4. 如果传入的段包含一个有效的序列号，TCPConnection确保至少有一个段作为应答被发送，以反应ackno和window_size的更新。</span>
+<span class="c1">// 5. 如果传入的段包含一个无效的序列号，这种段被称为“keep-alive”。对方发送这种segment的目的是为了查看当前的TCP连接是否仍然有效，所以的TCPConnection应该回复这些“keep-alive”。</span>
+</code></pre></div><p></p>
+</li>
+<li>
+<p>发送部分
+</p><div class="highlight"><pre><span></span><code><span class="c1">// TCPConnection将通过网络发送TCPSegment：</span>
+<span class="c1">// 1. TCPSender通过调用tcp_sender.cc中的函数，将一个TCPSegment添加到待发送队列中，并设置一些字段（seqno，SYN，FIN）。</span>
+<span class="c1">// 2. 在发送当前数据包之前，TCPConnection 会获取当前它自己的 TCPReceiver 的 ackno 和 window size，将其放置到待发送 TCPSegment 中（设置window_size和ackno），并设置其 ACK 标志。</span>
+
+<span class="c1">// TCPConnection 的不同函数中可能都有发送的需求，你可以自己创建新函数方便调用</span>
+</code></pre></div><p></p>
+</li>
+<li>
+<p>时间检测
+</p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">TCPConnection::tick</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">ms_since_last_tick</span><span class="p">);</span>
+<span class="c1">// 该方法将被操作系统定期调用，TCPConnection需要：</span>
+<span class="c1">// 1. 告诉TCPSender时间的流逝。</span>
+<span class="c1">// 2. 如果连续重传的次数超过上限TCPConfig::MAX_RETX_ATTEMPTS，则终止连接，并发送一个重置段给对端（设置了RST标志的空段）。</span>
+<span class="c1">// 3. 如有必要，结束连接。（什么时候是有必要呢？下一页PPT会回答这个问题）</span>
+</code></pre></div><p></p>
+</li>
+<li>
+<p>决定何时结束</p>
+<ul>
+<li>
+<p>暴力退出（unclear shutdown）：接收方收到 RST 标志或者发送方发送 RST 标志后，立即退出（设置当前 TCPConnection 的输入输出字节流的状态为错误状态，<code>_is_active</code> 立即赋值为 <code>false</code>）。可能会导致尚未传输完成的数据丢失（例如仍然在网络中运输的数据包在接收方收到 RST 标志后被丢弃）。</p>
+</li>
+<li>
+<p>若想让双方都在数据流收发完整后退出，即实现在没有错误情况下的结束连接，需要尽可能地确保两个字节流的每一个都已完全可靠地传递给了对方。在这种情况下，需要满足四个条件：</p>
+<ol>
+<li>入站流已经全部接收完毕。</li>
+<li>出站流已经全部发送完毕。</li>
+<li>需要发送的数据对方已完全确认。</li>
+<li>本地TCPConnection确信对端可以满足条件1-3后，有两种选项： <ol>
+<li>在两个流结束后逗留 linger</li>
+<li>被动关闭</li>
+</ol>
+</li>
+</ol>
+<p>对于 d 而言，TCPConnection中有一个名为<code>_linger_after_streams_finish</code> 的成员变量，变量初始为 <code>true</code>。如果在出站流发送结束前（即还没有到达出站流的EOF），入站流已经全部接收完毕（我没发完，对方发送了 FIN 告诉我发完了），则需要将此变量设置为 <code>false</code>。</p>
+<p><code>_linger_after_streams_finish</code> 为 <code>true</code> 时对应 d.i，需要停留 10 * _cfg.rt_timeout 时间后结束</p>
+<p><code>_linger_after_streams_finish</code> 为 <code>false</code> 时对应 d.ii，立即结束连接。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="32">3.2 测试环节</h3>
+<h4 id="321-lab4">3.2.1 lab4 代码测试</h4>
+<p>完成代码并重新编译之后，你可以在 <code>build/</code> 文件夹下输入 <code>make check [Enter]</code> 来进行测试，如果你的实现是正确的，你将看到类似如下的输出：</p>
+<div class="highlight"><pre><span></span><code>Test project /home/cs144/zju-comnet-labs/build
+        Start   1: t_wrapping_ints_cmp
+  1/164 Test   #1: t_wrapping_ints_cmp ..............   Passed    0.00 sec
+
+...
+
+163/164 Test #168: t_isnD_128K_8K_L .................   Passed    0.28 sec
+        Start 169: t_isnD_128K_8K_lL
+164/164 Test #169: t_isnD_128K_8K_lL ................   Passed    0.67 sec
+
+100% tests passed, 0 tests failed out of 164
+
+Total Test time (real) =  46.21 sec
+[100%] Built target check
+</code></pre></div>
+<h4 id="322-webget">3.2.2 webget 模块替换测试</h4>
+<p>同时，在 lab2 中我们曾经使用现成的 TCPSocket 实现了一个简易的 webget。本次实验中我们需要使用自己实现的 TCP 替换并进行重新测试。具体而言，你需要：</p>
+<ul>
+<li>将 <code>#include "socket.hh"</code> 替换成 <code>#include “tcp_sponge_socket.hh</code></li>
+<li>代码中的 <code>TCPSocket</code> 替换成 <code>FullStackSocket</code></li>
+<li>在 <code>get_URL()</code> 方法结尾加上 <code>socket.wait_until_closed()</code></li>
+</ul>
+<p>完成后重新编译并在 <code>build/</code> 文件夹输入 <code>make check_webget [Enter]</code> 进行测试，如果你的实现是正确的，你将看到类似如下的输出：
+</p><div class="highlight"><pre><span></span><code>Test project /home/cs144/zju-comnet-labs/build
+    Start 31: t_webget
+1/1 Test #31: t_webget .........................   Passed    1.07 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   1.07 sec
+[100%] Built target check_webget
+</code></pre></div><p></p>
+<h4 id="323">3.2.3 最终模拟终端测试</h4>
+<p>开启两个终端，分别在 <code>build/</code> 文件夹下运行：</p>
+<ul>
+<li><code>./apps/lab4 server cs144.keithw.org 3000</code> </li>
+<li><code>./apps/lab4 client cs144.keithw.org 3001</code></li>
+</ul>
+<p>模拟服务器和客户端。成功连接之后，你可以在任意一端向对端发送信息，同时观察接收情况。最后分别运行 <code>Ctrl+D</code> 来结束连接</p>
+<p>你可以输入任何信息作为数据模拟传输，但至少包括你的<strong>学号和名字</strong>。最后将输入<code>Ctrl+D</code> 结束运行之后的截图粘贴在实验报告中提交。</p>
+<p>下图为没有运行 <code>Ctrl+D</code> 结束时的模拟传输示例</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/lab5/example.png" data-desc-position="bottom"><img alt="" src="../assets/lab5/example.png"></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
