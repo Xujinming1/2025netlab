@@ -120,7 +120,7 @@ void TCPConnection::tick(const size_t ms_since_last_tick);
             1. 在两个流结束后逗留 linger
             2. 被动关闭
 
-        对于 d 而言，TCPConnection中有一个名为`_linger_after_streams_finish` 的成员变量，变量初始为 `true`。如果在出站流发送结束前（即还没有到达出站流的EOF），入站流已经全部接收完毕，则需要将此变量设置为 `false`。
+        对于 d 而言，TCPConnection中有一个名为`_linger_after_streams_finish` 的成员变量，变量初始为 `true`。如果在出站流发送结束前（即还没有到达出站流的EOF），入站流已经全部接收完毕（我没发完，对方发送了 FIN 告诉我发完了），则需要将此变量设置为 `false`。
         
         `_linger_after_streams_finish` 为 `true` 时对应 d.i，需要停留 10 * _cfg.rt_timeout 时间后结束
 
