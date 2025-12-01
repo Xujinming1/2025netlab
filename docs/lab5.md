@@ -73,7 +73,7 @@ RST 标志同样在 TCP 首部中进行标识，与 SYN 标志相邻。
 
 ### 3.1 代码实现
 
-本次实验中你不需要实现三次握手和四次挥手，但是需要结合之前实现的 TCP Receiver 和 Sender，实现完整的一个 TCP 段模块，可以同时收发信息和状态切换。大致存在的状态切换如图所示。
+本次实验中你需要结合之前实现的 TCP Receiver 和 Sender，实现完整的一个 TCP 段模块，可以同时收发信息和状态切换。大致存在的状态切换可以看成一个有限状态机，如图所示。
 
 <img src="../assets/lab5/dfs.png" alt="format" style="display:block; margin:0 auto; width:80%; height:auto; "/>
 
