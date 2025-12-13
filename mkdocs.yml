@@ -11,6 +11,7 @@ nav:
   - Lab3: lab3.md
   - Lab4: lab4.md
   - Lab5: lab5.md
+  - Lab6: lab6.md
 
 markdown_extensions:
   - attr_list
